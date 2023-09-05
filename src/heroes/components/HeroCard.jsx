@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 
+function getImageUrl(id) {
+    return new URL(`/assets/heroes/${ id }.jpg`, import.meta.url).href
+}
+
 export const HeroCard = ({ 
     id,
     superhero,
@@ -9,7 +13,8 @@ export const HeroCard = ({
     characters
  }) => {
 
-    const heroImgUrl = `/assets/heroes/${ id }.jpg`;
+
+    const heroImgUrl = getImageUrl(id);
 
     const characterByHero = (<p>{ characters }</p>);
 
